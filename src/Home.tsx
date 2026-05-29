@@ -1,5 +1,9 @@
-import { useEffect, useRef } from "react";
-import heroImage from "./assets/hero.png";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import heroImage1 from "./assets/spinner/1.svg";
+import heroImage2 from "./assets/spinner/2.svg";
+import heroImage3 from "./assets/spinner/3.svg";
+import heroImage4 from "./assets/spinner/4.svg";
 import Spinner from "./Spinner";
 
 type Point = {
@@ -13,6 +17,16 @@ export default function Home() {
     const mouseRef = useRef<Point | null>(null);
     const drawRef = useRef<(() => void) | null>(null);
     const frameRef = useRef<number | null>(null);
+    const [imageIndex, setImageIndex] = useState(0);
+
+    const heroImages = [
+        heroImage1,
+        heroImage2,
+        heroImage3,
+        heroImage4,
+    ];
+
+    const cycleDuration = 1500;
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -95,6 +109,14 @@ export default function Home() {
         };
     }, []);
 
+    useEffect(() => {
+        const interval = window.setInterval(() => {
+            setImageIndex((previousIndex) => (previousIndex + 1) % heroImages.length);
+        }, cycleDuration);
+
+        return () => window.clearInterval(interval);
+    }, []);
+
     const updateMousePosition = (event: React.PointerEvent<HTMLElement>) => {
         const section = sectionRef.current;
 
@@ -139,11 +161,19 @@ export default function Home() {
                     <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-dusk via-lavender-gray to-alabaster opacity-70 blur-2xl" />
                     <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-prussian/80 p-3 shadow-2xl shadow-black/40 backdrop-blur">
                         <div className="absolute inset-0 bg-linear-to-tr from-white/5 via-transparent to-white/10" />
-                        <img
-                            src={heroImage}
-                            alt="Hero preview"
-                            className="relative z-10 h-105 w-full rounded-3xl object-cover object-center"
-                        />
+                        <AnimatePresence mode="wait" initial={false}>
+                            <motion.img
+                                key={heroImages[imageIndex]}
+                                src={heroImages[imageIndex]}
+                                alt={`Hero preview ${imageIndex + 1}`}
+                                className="relative z-10 h-105 w-full rounded-3xl object-cover object-center"
+                                initial={{ y: "100%", opacity: 0, rotateX: -72, filter: "blur(8px)" }}
+                                animate={{ y: 0, opacity: 1, rotateX: 0, filter: "blur(0px)" }}
+                                exit={{ y: "-100%", opacity: 0, rotateX: 72, filter: "blur(8px)" }}
+                                transition={{ duration: 0.55, ease: [0.22, 0.5, 0.36, 1] }}
+                                style={{ transformOrigin: "50% 50% -12px" }}
+                            />
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>

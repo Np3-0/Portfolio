@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-const text = ["Software Development", "Engineering", "Cybersecurity", "Web Development"];
+const text = ["Software Development", "Web Development", "Cybersecurity", "Engineering"];
 const cycleDuration = 1500;
 
 export default function Spinner() {

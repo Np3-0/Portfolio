@@ -1,0 +1,16 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="eosus-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C21E3F"/>
+      <stop offset="100%" stop-color="#F26B1D"/>
+    </radialGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="300" cy="300" r="255" fill="url(#eosus-bg)" />
+  <!-- Tree/Shrub Icon (centered and scaled up 10%) -->
+  <g transform="translate(300,300) scale(16.5) translate(-12,-12)">
+    <path d="M12 22v-7l-2-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M17 8v.8A6 6 0 0 1 13.8 20v0H10v0A6.5 6.5 0 0 1 7 8h0a5 5 0 0 1 10 0Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="m14 14-2 2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
