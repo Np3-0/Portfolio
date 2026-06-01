@@ -4,7 +4,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-14">
                     <div className="flex items-center">
-                        <a href="/"><span className="text-blue-500 font-bold text-2xl">NO.</span></a>
+                        <a href="#home"><span className="text-blue-500 font-bold text-2xl">NO.</span></a>
                     </div>
                     <div className="block">
                         <div className="ml-10 flex items-center space-x-8">

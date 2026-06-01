@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import heroImage1 from "./assets/spinner/1.svg";
-import heroImage2 from "./assets/spinner/2.svg";
-import heroImage3 from "./assets/spinner/3.svg";
-import heroImage4 from "./assets/spinner/4.svg";
-import Spinner from "./Spinner";
+import heroImage1 from "../assets/spinner/1.svg";
+import heroImage2 from "../assets/spinner/2.svg";
+import heroImage3 from "../assets/spinner/3.svg";
+import heroImage4 from "../assets/spinner/4.svg";
+import Spinner from "../components/Spinner";
 
 type Point = {
     x: number;

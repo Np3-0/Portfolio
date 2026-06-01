@@ -1,6 +1,6 @@
-import Home from "./Home";
+import Home from "./sections/Home.tsx";
 import Navbar from "./Navbar"
-import About from "./About";
+import About from "./sections/About.tsx"
 
 export default function App() {
   return (
