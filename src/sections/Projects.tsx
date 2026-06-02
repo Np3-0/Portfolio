@@ -2,6 +2,10 @@
 
 import { motion, useScroll, useTransform } from "motion/react"
 import { useRef } from "react"
+import eosus from "/eosus.png"
+import tavio from "/tavio.png"
+import pitk from "/pitk.png"
+import walkmini from "/walkmini.png"
 
 export default function ScrollHorizontal() {
     const containerRef = useRef(null)
@@ -16,183 +20,45 @@ export default function ScrollHorizontal() {
 
     return (
         <>
-            <section className="intro-section" id="projects">
+            <section id="projects" className="flex h-[10vh] flex-col items-center justify-end pb-20 text-center w-full">
                 <h1 className="font-bold text-6xl text-center text-blue-500">Projects</h1>
             </section>
 
-            <div ref={containerRef} className="scroll-container">
-                <div className="sticky-wrapper">
-                    <motion.div className="gallery" style={{ x }}>
+            <div ref={containerRef} className="relative h-[300vh]">
+                <div className="sticky top-0 flex h-screen w-full items-center justify-start overflow-hidden">
+                    <motion.div
+                        className="flex gap-10 items-center pl-[calc(50vw-200px)] pr-6 will-change-transform max-sm:gap-3.75 max-sm:pl-[calc(50vw-140px)]"
+                        style={{ x }}
+                    >
                         {items.map((item) => (
                             <div
-                                key={item.id}
-                                className="gallery-item"
-                                style={
-                                    {
-                                        "--item-color": item.color,
-                                        "--item-image": `url(${item.image})`,
-                                    } as React.CSSProperties
-                                }
+                                className="shrink-0 w-100 h-125 rounded-xl relative overflow-hidden bg-cover bg-center max-sm:w-70 max-sm:h-87.5 hover:cursor-pointer hover:scale-[1.05] transition-transform duration-300"
+                                style={{ backgroundImage: `url(${item.image})` }}
                             >
-                                <div className="item-content">
-                                    <span className="item-number">0{item.id}</span>
-                                    <h2>{item.label}</h2>
+
+                            <div
+                                className="absolute inset-0 mix-blend-multiply"
+                                style={{ background: `linear-gradient(to bottom, transparent 40%, ${item.color})` }}
+                            />
+
+                                <div className="absolute bottom-7.5 left-7.5 z-10">
+                                    <h2 className="text-alabaster font-bold m-0 text-2xl">{item.label}</h2>
                                 </div>
                             </div>
                         ))}
+                        
                     </motion.div>
                 </div>
             </div>
-            <StyleSheet />
         </>
     )
 }
 
-/**
- * ==============   Styles   ================
- */
-
-function StyleSheet() {
-    return (
-        <style>{`
-            body {
-                overflow-x: hidden;
-            }
-
-            #example {
-                height: auto;
-                overflow: visible;
-            }
-
-            .intro-section {
-                height: 50vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                align-items: center;
-                text-align: center;
-                padding-bottom: 40px;
-            }
-
-            .scroll-container {
-                height: 300vh;
-                position: relative;
-            }
-
-            .sticky-wrapper {
-                position: sticky;
-                top: 0;
-                height: 100vh;
-                width: 400px;
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                overflow: visible;
-            }
-
-            .gallery {
-                display: flex;
-                gap: 30px;
-                will-change: transform;
-            }
-
-            .gallery-item {
-                flex-shrink: 0;
-                width: 400px;
-                height: 500px;
-                border-radius: 12px;
-                position: relative;
-                overflow: hidden;
-                background-image: var(--item-image);
-                background-size: cover;
-                background-position: center;
-            }
-
-            .gallery-item::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: linear-gradient(
-                    to bottom,
-                    transparent 60%,
-                    var(--item-color)
-                );
-                mix-blend-mode: multiply;
-            }
-
-            .item-content {
-                position: absolute;
-                bottom: 30px;
-                left: 30px;
-                z-index: 1;
-            }
-
-            .item-number {
-                font-size: 14px;
-                color: var(--item-color);
-                font-family: "Geist Mono", monospace;
-                display: block;
-                margin-bottom: 8px;
-            }
-
-            .gallery-item h2 {
-                font-size: 28px;
-                font-weight: 600;
-                color: var(--white);
-                margin: 0;
-            }
-
-            .outro-section {
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            @media (max-width: 600px) {
-                .sticky-wrapper {
-                    width: 280px;
-                }
-
-                .gallery {
-                    gap: 15px;
-                }
-
-                .gallery-item {
-                    width: 280px;
-                    height: 350px;
-                }
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                .gallery {
-                    transform: none !important;
-                }
-                .scroll-container {
-                    height: auto;
-                }
-                .sticky-wrapper {
-                    position: relative;
-                    height: auto;
-                    width: 100%;
-                    overflow-x: auto;
-                    padding: 50px 0;
-                }
-            }
-        `}</style>
-    )
-}
-
-/**
- * ==============   Data   ================
- */
-
 const items = [
-    { id: 1, color: "var(--hue-1)", label: "Night One", image: "/photos/tokyo-shinjuku-2/image-1.jpg" },
-    { id: 2, color: "var(--hue-2)", label: "Night Two", image: "/photos/tokyo-shinjuku-2/image-2.jpg" },
-    { id: 3, color: "var(--hue-3)", label: "Night Three", image: "/photos/tokyo-shinjuku-2/image-3.jpg" },
-    { id: 4, color: "var(--hue-4)", label: "Night Four", image: "/photos/tokyo-shinjuku-2/image-4.jpg" },
+    { color: "#902D41", label: "Eosus", image: eosus },
+    { color: "#2364AA", label: "Tavio", image: tavio },
+    { color: "#F5D23A", label: "Please Impress the King", image: pitk },
+    { color: "#AA2AAA", label: "Walk-Mini", image: walkmini },
 ]
 
 const ITEM_WIDTH = 400
