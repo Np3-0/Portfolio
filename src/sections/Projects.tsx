@@ -1,11 +1,10 @@
-"use client"
-
 import { motion, useScroll, useTransform } from "motion/react"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import eosus from "/eosus.png"
 import tavio from "/tavio.png"
 import pitk from "/pitk.png"
 import walkmini from "/walkmini.png"
+import ProjectPopup from "../components/ProjectPopup"
 
 export default function ScrollHorizontal() {
     const containerRef = useRef(null)
@@ -13,7 +12,20 @@ export default function ScrollHorizontal() {
         target: containerRef,
         offset: ["start start", "end end"],
     })
+    
+    const [isProjectOpen, setIsProjectOpen] = useState(false);
+    const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
 
+    function handleProjectDisplay(newState: boolean, id?: number) {
+        setIsProjectOpen(newState);
+        setSelectedProjectId(newState ? (typeof id === 'number' ? id : null) : null);
+        if (newState) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    }
+    
     // Move from first item centered to last item centered
     const totalDistance = (items.length - 1) * (ITEM_WIDTH + GAP)
     const x = useTransform(scrollYProgress, [0, 1], [0, -totalDistance])
@@ -32,13 +44,15 @@ export default function ScrollHorizontal() {
                     >
                         {items.map((item) => (
                             <div
+                                key={item.id}
                                 className="shrink-0 w-100 h-125 rounded-xl relative overflow-hidden bg-cover bg-center max-sm:w-70 max-sm:h-87.5 hover:cursor-pointer hover:scale-[1.05] transition-transform duration-300"
                                 style={{ backgroundImage: `url(${item.image})` }}
+                                onClick={() => handleProjectDisplay(true, item.id)}
                             >
 
                             <div
                                 className="absolute inset-0 mix-blend-multiply"
-                                style={{ background: `linear-gradient(to bottom, transparent 40%, ${item.color})` }}
+                                style={{ background: `linear-gradient(to bottom, transparent 20%, ${item.color})` }}
                             />
 
                                 <div className="absolute bottom-7.5 left-7.5 z-10">
@@ -50,15 +64,19 @@ export default function ScrollHorizontal() {
                     </motion.div>
                 </div>
             </div>
+
+            {isProjectOpen && (
+                <ProjectPopup handleProjectDisplay={handleProjectDisplay} id={selectedProjectId ?? 0} />
+            )}
         </>
     )
 }
 
 const items = [
-    { color: "#902D41", label: "Eosus", image: eosus },
-    { color: "#2364AA", label: "Tavio", image: tavio },
-    { color: "#F5D23A", label: "Please Impress the King", image: pitk },
-    { color: "#AA2AAA", label: "Walk-Mini", image: walkmini },
+    { id: 1, color: "#902D41", label: "Eosus", image: eosus },
+    { id: 2, color: "#2364AA", label: "Tavio", image: tavio },
+    { id: 3, color: "#F5D23A", label: "Please Impress the King", image: pitk },
+    { id: 4, color: "#AA2AAA", label: "Walk-Mini", image: walkmini },
 ]
 
 const ITEM_WIDTH = 400
