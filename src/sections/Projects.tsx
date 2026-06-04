@@ -73,10 +73,10 @@ export default function ScrollHorizontal() {
 }
 
 const items = [
-    { id: 1, color: "#902D41", label: "Eosus", image: eosus },
-    { id: 2, color: "#2364AA", label: "Tavio", image: tavio },
-    { id: 3, color: "#F5D23A", label: "Please Impress the King", image: pitk },
-    { id: 4, color: "#AA2AAA", label: "Walk-Mini", image: walkmini },
+    { id: 0, color: "#902D41", label: "Eosus", image: eosus },
+    { id: 1, color: "#2364AA", label: "Tavio", image: tavio },
+    { id: 2, color: "#F5D23A", label: "Please Impress the King", image: pitk },
+    { id: 3, color: "#AA2AAA", label: "Walk-Mini", image: walkmini },
 ]
 
 const ITEM_WIDTH = 400

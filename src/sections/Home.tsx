@@ -115,7 +115,7 @@ export default function Home() {
         }, cycleDuration);
 
         return () => window.clearInterval(interval);
-    }, []);
+    });
 
     const updateMousePosition = (event: React.PointerEvent<HTMLElement>) => {
         const section = sectionRef.current;

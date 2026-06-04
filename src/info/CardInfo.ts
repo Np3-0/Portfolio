@@ -9,7 +9,7 @@ const cardInfo = [
         paragraph: "Employment: Intern @ Talon Biomarkers",
         details: "Responsible for creating an automatic inventory system for dyes used in cytometric analysis.",
         subtitle: "Skills",
-        skills: ["Python", "Java", "Firebase", "C#", "Unity", "CAD", "KiCAD", "Web Development"]
+        skills: ["Python", "Java", "React", "Firebase", "C#", "Unity", "CAD", "KiCAD", "Web Development"]
     }
 ];
 
