@@ -2,6 +2,9 @@ import eosus1 from "../assets/spinner/1.svg";
 import eosus2 from "/eosus2.png";
 import eosus3 from "/eosus.png"
 import eosus4 from "/eosus4.png"
+import tavio1 from "../assets/spinner/2.svg";
+import tavio3 from "/tavio.png";
+
 
 
 const ProjectInfo = [
@@ -20,7 +23,7 @@ const ProjectInfo = [
             not generating properly. To fix this, I learned how to ensure that the user said who they were, by checking each time they loaded a page.`,
         link: "https://github.com/Np3-0/Eosus",
         images: [eosus1, eosus2, eosus3, eosus4],
-        image_captions: ["N/A", "Sending post to database to be posted.", "N/A", "Makes sure user is logged in."]
+        image_captions: ["N/A", "Delete's a user's comments.", "N/A", "Makes sure user is logged in."]
     },
     {
         title: "Tavio",
@@ -35,7 +38,7 @@ const ProjectInfo = [
         debug: `Compared to my other projects, Tavio was the most difficult to debug, since this was my first experience with Flutter. I spent countless hours looking at documentation and experimenting with features to fix key errors.
             For example, I focused a lot of debugging on voice control. The packages I were using had little documentation, so I spent a lot of time trying out different combinations to see what would work.`,
         link: "https://github.com/Np3-0/Tavio-Frontend",
-        images: [eosus1, eosus2, eosus3, eosus4],
+        images: [tavio1, eosus2, tavio3, eosus4],
         image_captions: ["N/A", "Sending post to database to be posted.", "N/A", "Makes sure user is logged in."]
     },
     {

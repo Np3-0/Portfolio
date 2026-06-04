@@ -26,9 +26,9 @@ export default function ProjectPopup({ handleProjectDisplay, id }: ProjectPopupP
 
     return (
         <div className="w-full fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-            <div className="rounded-lg px-8 pt-10 pb-8 shadow-2xl relative w-350 min-h-250" style={{ backgroundColor: ProjectInfo[id].colors[0] }}>
+            <div className="rounded-lg px-8 pt-10 pb-8 shadow-2xl relative w-300 lg:w-350 min-h-100" style={{ backgroundColor: ProjectInfo[id].colors[0] }}>
                 <div className="absolute top-4 right-4 cursor-pointer" onClick={() => handleProjectDisplay(false, id)}>
-                    <XButton className="hover:text-red-500 transition-colors" />
+                    <XButton className="text-red-500" />
                 </div>
 
                 <div className="w-full h-full flex flex-col justify-start items-start">
@@ -62,8 +62,7 @@ export default function ProjectPopup({ handleProjectDisplay, id }: ProjectPopupP
 
                         <div className="w-full flex justify-center items-center">
                             <div className="relative w-full max-w-md lg:max-w-lg">
-                                <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-dusk via-lavender-gray to-alabaster opacity-70 blur-2xl" />
-                                <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-prussian/80 p-3 shadow-2xl shadow-black/40 backdrop-blur">
+                                <div className="relative overflow-hidden rounded-4xl border border-white/10 p-3 shadow-2xl shadow-black/40 backdrop-blur">
                                     <div className="absolute inset-0 bg-linear-to-tr from-white/5 via-transparent to-white/10" />
                                     <AnimatePresence mode="wait" initial={false}>
                                         <motion.img
@@ -79,6 +78,11 @@ export default function ProjectPopup({ handleProjectDisplay, id }: ProjectPopupP
                                         />
                                     </AnimatePresence>
                                 </div>
+                                {ProjectInfo[id].image_captions[imageIndex] !== "N/A" && (
+                                    <p className="text-lg font-medium mt-3 text-center px-2" style={{ color: ProjectInfo[id].colors[2] }}>
+                                        {ProjectInfo[id].image_captions[imageIndex]}
+                                    </p>
+                                )}
                             </div>
                         </div>
                     </div>
