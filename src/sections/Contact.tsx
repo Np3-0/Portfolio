@@ -29,7 +29,7 @@ export default function Contact() {
                         </a></p>
                     </div>
                 </div>
-                <iframe src={resume} className="w-4xl h-screen" title="Resume"/>
+                <iframe src={resume} className="w-4xl xl:max-w-7xl h-screen" title="Resume"/>
             </section>
         </>
     );
