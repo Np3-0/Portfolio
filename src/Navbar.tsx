@@ -8,9 +8,9 @@ export default function Navbar() {
                     </div>
                     <div className="block">
                         <div className="ml-10 flex items-center space-x-8">
-                            <a href="#about" className="text-gray-300 hover:text-blue-500 transition-colors duration-300 font-semibold text-lg">About</a>
-                            <a href="#projects" className="text-gray-300 hover:text-blue-500 transition-colors duration-300 font-semibold text-lg">Projects</a>
-                            <a href="#contact" className="text-gray-300 hover:text-blue-500 transition-colors duration-300 font-semibold text-lg">Contact</a>
+                            <a href="#about" className="text-blue-500 hover:scale-[1.05] transition-transform duration-300 font-semibold text-lg">About</a>
+                            <a href="#projects" className="text-blue-500 hover:scale-[1.05] transition-transform duration-300 font-semibold text-lg">Projects</a>
+                            <a href="#contact" className="text-blue-500 hover:scale-[1.05] transition-transform duration-300 font-semibold text-lg">Contact</a>
                         </div>
                     </div>
                 </div>

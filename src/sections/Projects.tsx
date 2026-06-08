@@ -32,7 +32,7 @@ export default function ScrollHorizontal() {
 
     return (
         <>
-            <section id="projects" className="flex h-[10vh] flex-col items-center justify-end pb-20 text-center w-full">
+            <section id="projects" className="flex h-[10vh] flex-col items-center justify-end pb-10 mt-20 lg:mt-0 text-center w-full">
                 <h1 className="font-bold text-6xl text-center text-blue-500">Projects</h1>
             </section>
 
@@ -66,7 +66,7 @@ export default function ScrollHorizontal() {
             </div>
 
             {isProjectOpen && (
-                <ProjectPopup handleProjectDisplay={handleProjectDisplay} id={selectedProjectId ?? 0} />
+                <ProjectPopup handleProjectDisplay={handleProjectDisplay} id={selectedProjectId ?? 0} bg={selectedProjectId == 2 ? "video" : ""}/>
             )}
         </>
     )

@@ -2,6 +2,7 @@ import Navbar from "./Navbar.tsx"
 import Home from "./sections/Home.tsx";
 import About from "./sections/About.tsx"
 import Projects from "./sections/Projects.tsx";
+import Contact from "./sections/Contact.tsx";
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
         <Home />
         <About />
         <Projects />
-        <h1 className="text-3xl font-bold text-alabaster w-full text-center">This website is in the works!</h1>
+        <Contact />
     </div>
   );
 }

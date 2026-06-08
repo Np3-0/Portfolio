@@ -8,7 +8,7 @@ interface CardProps {
 export default function Card({ index, type="N/A" }: CardProps) {
     const {title, paragraph, details, subtitle, skills} = cardInfo[index];
     return (
-        <div className="bg-prussian block max-w-5xl w-3xl p-6 rounded-lg shadow-xs">
+        <div className="bg-prussian w-full max-w-xl p-6 rounded-lg shadow-xs">x``
             <h2 className="mb-6 text-4xl font-bold tracking-tight text-heading leading-8 text-blue-500">{title}</h2>
             {type === "Experience" && (
                 <>

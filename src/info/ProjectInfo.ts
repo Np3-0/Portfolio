@@ -4,7 +4,10 @@ import eosus3 from "/eosus.png"
 import eosus4 from "/eosus4.png"
 import tavio1 from "../assets/spinner/2.svg";
 import tavio3 from "/tavio.png";
-
+import pitk from "/pitk.png";
+import pitk3 from "/pitk3.png";
+import walkmini from "../assets/spinner/4.svg";
+import walkmini3 from "/walkmini3.png";
 
 
 const ProjectInfo = [
@@ -54,7 +57,7 @@ const ProjectInfo = [
         debug: `This game was developed very rapidly, meaning features were changed constantly. Debugging often consisted of looking for conflicts between code, and trying to mitigate the issues.
             One example is that the fighting system would overwrite actions in the main game, causing a multitude of issues. This was solved by coding states in, which ensured the scene that the player was in. `,
         link: "https://github.com/Np3-0/2026-SkillsUSA-Submission",
-        images: [eosus1, eosus2, eosus3, eosus4],
+        images: [pitk, eosus2, pitk3, eosus4],
         image_captions: ["N/A", "Sending post to database to be posted.", "N/A", "Makes sure user is logged in."]
     },
     {
@@ -71,8 +74,8 @@ const ProjectInfo = [
             so I had to do extensive research in order to make sure I would not cause any major issues with my design. Specifically, I had to look through multiple datasheets to ensure
             that I was using the correct resistors for certain components.`,
         link: "https://github.com/Np3-0/walkmini",
-        images: [eosus1, eosus2, eosus3, eosus4],
-        image_captions: ["N/A", "Sending post to database to be posted.", "N/A", "Makes sure user is logged in."]
+        images: [walkmini, eosus2, walkmini3, eosus4],
+        image_captions: ["N/A", "Sending post to database to be posted.", "Photo of the PCB", "Makes sure user is logged in."]
     }
 ]
 
