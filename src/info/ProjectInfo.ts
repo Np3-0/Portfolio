@@ -3,12 +3,17 @@ import eosus2 from "/eosus2.png";
 import eosus3 from "/eosus.png"
 import eosus4 from "/eosus4.png"
 import tavio1 from "../assets/spinner/2.svg";
+import tavio2 from "/tavio2.png";
 import tavio3 from "/tavio.png";
+import tavio4 from "/tavio4.png";
 import pitk from "/pitk.png";
+import pitk2 from "/pitk2.png";
 import pitk3 from "/pitk3.png";
+import pitk4 from "/pitk4.png";
 import walkmini from "../assets/spinner/4.svg";
+import walkmini2 from "/walkmini2.png";
 import walkmini3 from "/walkmini3.png";
-
+import walkmini4 from "/walkmini4.png";
 
 const ProjectInfo = [
     {
@@ -41,8 +46,8 @@ const ProjectInfo = [
         debug: `Compared to my other projects, Tavio was the most difficult to debug, since this was my first experience with Flutter. I spent countless hours looking at documentation and experimenting with features to fix key errors.
             For example, I focused a lot of debugging on voice control. The packages I were using had little documentation, so I spent a lot of time trying out different combinations to see what would work.`,
         link: "https://github.com/Np3-0/Tavio-Frontend",
-        images: [tavio1, eosus2, tavio3, eosus4],
-        image_captions: ["N/A", "Sending post to database to be posted.", "N/A", "Makes sure user is logged in."]
+        images: [tavio1, tavio2, tavio3, tavio4],
+        image_captions: ["N/A", "Scores restaurants to return the correct one.", "N/A", "Gets the user's permissions, and asks for them if not found."]
     },
     {
         title: "Please Impress the King",
@@ -57,8 +62,8 @@ const ProjectInfo = [
         debug: `This game was developed very rapidly, meaning features were changed constantly. Debugging often consisted of looking for conflicts between code, and trying to mitigate the issues.
             One example is that the fighting system would overwrite actions in the main game, causing a multitude of issues. This was solved by coding states in, which ensured the scene that the player was in. `,
         link: "https://github.com/Np3-0/2026-SkillsUSA-Submission",
-        images: [pitk, eosus2, pitk3, eosus4],
-        image_captions: ["N/A", "Sending post to database to be posted.", "N/A", "Makes sure user is logged in."]
+        images: [pitk, pitk2, pitk3, pitk4],
+        image_captions: ["N/A", "Logic for ending a dialogue interaction", "N/A", "Controls the game's menu states."]
     },
     {
         title: "Walk-Mini",
@@ -74,8 +79,8 @@ const ProjectInfo = [
             so I had to do extensive research in order to make sure I would not cause any major issues with my design. Specifically, I had to look through multiple datasheets to ensure
             that I was using the correct resistors for certain components.`,
         link: "https://github.com/Np3-0/walkmini",
-        images: [walkmini, eosus2, walkmini3, eosus4],
-        image_captions: ["N/A", "Sending post to database to be posted.", "Photo of the PCB", "Makes sure user is logged in."]
+        images: [walkmini, walkmini2, walkmini3, walkmini4],
+        image_captions: ["N/A", "Determining whether a button was pressed and which one was used.", "Photo of the PCB", "Customization page inside of the display."]
     }
 ]
 
